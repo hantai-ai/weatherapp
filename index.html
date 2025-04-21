@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Weather Forecast</h1>
+        <div class="location-input">
+            <input type="text" id="locationInput" placeholder="Enter City Name (e.g., London)">
+            <button id="getWeatherBtn">Get Weather</button>
+        </div>
+    </header>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="hidden">Loading...</div>
+
+    <!-- Error Message Area -->
+    <div id="error-message" class="error hidden"></div>
+
+    <!-- Main Container for Weather Info (Initially Hidden) -->
+    <main id="weather-container" class="hidden">
+
+        <!-- Current Weather Section -->
+        <section id="current-weather" class="weather-card">
+            <h2>Current Weather in <span id="current-location">---</span></h2>
+            <div class="weather-details">
+                <div class="main-info">
+                     <!-- Ensure placeholder.png exists in the same folder or update path -->
+                     <img id="current-icon" src="placeholder.png" alt="Weather icon" width="50" height="50">
+                     <span id="current-temp">--°C</span>
+                     <span id="current-desc">---------</span>
+                </div>
+                <div class="extra-info">
+                    <p>Feels like: <span id="current-feels-like">--°C</span></p>
+                    <p>Humidity: <span id="current-humidity">--%</span></p>
+                    <p>Wind: <span id="current-wind">-- m/s</span></p>
+                    <p>Pressure: <span id="current-pressure">---- hPa</span></p>
+                    <!-- Add more fields as needed -->
+                </div>
+            </div>
+             <p class="last-updated">Last updated: <span id="last-updated-time">Never</span></p>
+        </section>
+
+        <!-- Hourly Forecast Section -->
+        <section id="hourly-forecast" class="weather-card">
+            <h2>Hourly Forecast</h2>
+            <div id="hourly-list" class="forecast-list horizontal-scroll">
+                <!-- Placeholder for initial state -->
+                <div class="hourly-item placeholder">--:-- --°C <img src="placeholder.png" width="30" alt=""></div>
+            </div>
+        </section>
+
+        <!-- Daily Forecast Section -->
+        <section id="daily-forecast" class="weather-card">
+            <h2>Daily Forecast</h2>
+            <div id="daily-list" class="forecast-list">
+                 <!-- Placeholder for initial state -->
+                 <div class="daily-item placeholder">--- H:--° L:--° <img src="placeholder.png" width="30" alt=""></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <!-- Updated footer message -->
+        <p>Weather data provided by local database.</p>
+        <!-- Or © 2023 Your Weather App -->
+    </footer>
+
+    <!-- IMPORTANT: Script tag at the end of the body -->
+    <script src="script.js"></script>
+</body>
+</html>
